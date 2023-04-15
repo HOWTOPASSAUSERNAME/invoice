@@ -11,7 +11,7 @@ namespace ConsoleApp1
 	{
 		static void Main(string[] args)
 		{
-			int itemPrice = 0;
+			int itemPrice = 38;
 			try
 			{
 				Invoice invoice = new Invoice(itemPrice);
@@ -27,6 +27,7 @@ namespace ConsoleApp1
 	public class Invoice
 
 	{
+		private readonly double _rate;
 		private int _price;
 		public int Price
 		{
@@ -40,12 +41,12 @@ namespace ConsoleApp1
 		}
 		public int Tax { get; private set; }
 		public int InclusivePrice { get; private set; }
-		public double Rate { get; private set; }
+		
 
 		public Invoice(int price, double taxRate = 0.05)
 		{
 			this.Price = price;
-			this.Rate = taxRate;
+			_rate = taxRate;
 					
 		}
 
@@ -57,7 +58,7 @@ namespace ConsoleApp1
 
 		private int GetTax()
 		{
-			Tax = (int)Math.Round(_price * Rate, MidpointRounding.AwayFromZero);
+			Tax = (int)Math.Round(_price * _rate, MidpointRounding.AwayFromZero);
 			return Tax;
 		}
 		private int GetInclusivePrice()
