@@ -12,8 +12,14 @@ namespace ConsoleApp1
 		static void Main(string[] args)
 		{
 			int itemPrice = 0;
-			Invoice invoice = new Invoice(itemPrice);
-			Console.WriteLine(invoice.GetResult());
+			try
+			{
+				Invoice invoice = new Invoice(itemPrice);
+				Console.WriteLine(invoice.GetResult());
+			}
+			catch(Exception ex) {
+				Console.WriteLine(ex.ToString());
+			}
 		}
 	}
 
@@ -28,7 +34,7 @@ namespace ConsoleApp1
 			get { return _price; }
 			set
 			{
-				if (value <= 0) { _price = 0; }
+				if (value <= 0) { throw new Exception("商品價格小於等於0，不用發票"); }
 				else{ _price = value; }
 			}
 		}
@@ -40,13 +46,11 @@ namespace ConsoleApp1
 		{
 			this.Price = price;
 			this.Rate = taxRate;
-
-			
+					
 		}
 
 		public string GetResult() {
-
-			if (_price == 0) { return errorWarning(); }
+					
 			string result = $"商品總金額:{_price},營業稅:{GetTax()}, 發票總額:{GetInclusivePrice()}";
 			return result ;
 		}
@@ -54,24 +58,21 @@ namespace ConsoleApp1
 		private int GetTax()
 		{
 			Tax = (int)Math.Round(_price * Rate, MidpointRounding.AwayFromZero);
-			
 			return Tax;
 		}
 		private int GetInclusivePrice()
 		{
-			
 			InclusivePrice = _price + GetTax();
 			return InclusivePrice;
-
 		}
 
 
 
-		private string errorWarning()
-		{
-			return "輸入的值小於或等於0，請重新輸入";
+		//private string errorWarning()
+		//{
+		//	return "輸入的值小於或等於0，請重新輸入";
 
-		}
+		//}
 
 	}
 
