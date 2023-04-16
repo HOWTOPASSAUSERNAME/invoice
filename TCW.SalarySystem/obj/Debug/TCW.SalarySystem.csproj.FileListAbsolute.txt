@@ -1,0 +1,8 @@
+C:\!OOP\PracticeByMyself\0414_practice\TCW.SalarySystem\bin\Debug\TCW.SalarySystem.exe.config
+C:\!OOP\PracticeByMyself\0414_practice\TCW.SalarySystem\bin\Debug\TCW.SalarySystem.exe
+C:\!OOP\PracticeByMyself\0414_practice\TCW.SalarySystem\bin\Debug\TCW.SalarySystem.pdb
+C:\!OOP\PracticeByMyself\0414_practice\TCW.SalarySystem\obj\Debug\TCW.SalarySystem.csproj.AssemblyReference.cache
+C:\!OOP\PracticeByMyself\0414_practice\TCW.SalarySystem\obj\Debug\TCW.SalarySystem.csproj.SuggestedBindingRedirects.cache
+C:\!OOP\PracticeByMyself\0414_practice\TCW.SalarySystem\obj\Debug\TCW.SalarySystem.csproj.CoreCompileInputs.cache
+C:\!OOP\PracticeByMyself\0414_practice\TCW.SalarySystem\obj\Debug\TCW.SalarySystem.exe
+C:\!OOP\PracticeByMyself\0414_practice\TCW.SalarySystem\obj\Debug\TCW.SalarySystem.pdb
